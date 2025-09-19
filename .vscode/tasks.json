@@ -7,9 +7,9 @@
             "command": "gcc",
             "args": [
                 "-g",
-                "${file}",
+                "\"${file}\"",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}.exe"
+                "\"${fileDirname}/${fileBasenameNoExtension}.exe\""
             ],
             "group": "build"
         }
