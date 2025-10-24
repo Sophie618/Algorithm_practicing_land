@@ -1,18 +1,21 @@
-# #列表推导式
-# squares=[x**2 for x in range(1,101)]
-# print(f"前十个：{squares[:10]}")
+import torch
+import torch.nn as nn
 
-# even_squares=[x**2 for x in range(1,101) if x%2==0]
-# print(f"偶数的平方前10个：{even_squares[:10]}")
+class SimpleNN(nn.Module):
+    def __init__(self):
+        super(SimpleNN,self).__init__()
+        self.fc1=nn.Linear(3,5)
+        self.fc2=nn.Linear(5,1)
 
-#字典操作
-def word_frequency(text):
-    words=text.lower().split()
-    freq={}
-    for word in words:
-        freq[word]=freq.get(word,0)+1
-    return freq
+    def forward(self,x):
+        x=torch.relu(self.fc1(x))
+        x=self.fc2(x)
+        return x
 
-text="hello world hello python python python"
-result=word_frequency(text)
-print(result)
+#创建模型
+model = SimpleNN()
+
+#随机输入
+input_data=torch.randn(1,3)
+output=model(input_data)
+print(output)
