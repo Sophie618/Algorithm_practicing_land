@@ -7,6 +7,17 @@ typedef struct BiNode{
     BiNode(char val='#'):data(val),lchild(nullptr),rchild(nullptr) {}
 } BiNode, *BiTree;//*BiTree是定义了一个指向BiNode节点类型的指针
 
+// queue<BiTree> q;的等价定义
+// typedef struct LinkNode{//链式队列的节点
+//     BiTree *data;//数据存放指向树节点的指针而不是节点
+//     struct LinkNode *next;
+// } LinkNode;
+
+// typedef struct{//队列具有前驱和后驱指针
+//     LinkNode *front;
+//     LinkNode *rear;
+// } LinkQueue;
+
 int idx;
 void Print(BiTree T){//层级打印
     if (T == nullptr)
