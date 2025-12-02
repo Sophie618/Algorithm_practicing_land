@@ -60,7 +60,7 @@ void backtrack(int n,int m,int startRow){
         {
             result++;//全部控制了，说明方法数多一种
         }
-        return;//返回
+        return;//返回,不要忘了，不然就会陷入死循环
     }
 
     //从startrow开始尝试放置皇后
