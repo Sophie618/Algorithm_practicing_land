@@ -78,7 +78,7 @@ BiTree RightRotation(BiTree T){
     T->lchild = lch_rch; // 也是避免原来的左孩子指针变成野指针
 
     // 注意高度要更新
-    T->height = 1 + max(height(T->lchild), height(T->rchild));
+    T->height = 1 + max(height(T->lchild), height(T->rchild));//从矮的开始更新
     lCh->height = 1 + max(height(lCh->lchild), height(lCh->rchild));
 
     return lCh;
