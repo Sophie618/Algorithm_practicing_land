@@ -16,7 +16,7 @@ public:
         if (head == nullptr)
         {
             return nullptr;
-        }
+        }//其实这一坨不要似乎也行，因为cur指向head➕while循环判断就可以保证head（cur）不为空再循环，否则也是直接返回pre（nullptr）
         ListNode *pre = nullptr;
         ListNode *cur = head;
 
