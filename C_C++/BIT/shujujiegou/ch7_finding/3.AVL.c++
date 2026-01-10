@@ -61,7 +61,7 @@ BiTree LeftRotation(BiTree T){//T是指向拐点的
     BiNode *rch_lch = rCh->lchild;//记录右节点的左孩子地址
 
     rCh->lchild = T;
-    T->rchild = rch_lch;//这里是为了防止拐点处原有的右孩子指针出问题，要指向null
+    T->rchild = rch_lch;//这里是为了防止拐点处原有的右孩子指针出问题，要指向null(❌，当拐点的左孩子、拐点右孩子的孩子不为空时更是，拐点的右孩子要接上原来右孩子的左孩子)
 
     //注意高度要更新
     T->height = 1 + max(height(T->lchild), height(T->rchild));
