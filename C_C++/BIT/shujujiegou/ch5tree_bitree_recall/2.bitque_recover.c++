@@ -19,7 +19,7 @@ typedef struct BiNode{
 // } LinkQueue;
 
 int idx;
-void Print(BiTree T){//层级打印
+void Print(BiTree T){//二叉树层序遍历
     if (T == nullptr)
     {
         return;
@@ -52,7 +52,7 @@ BiTree CreateBitree(const string& inOrder, const string& postOrder){
     string leftIn = inOrder.substr(0, rootIdx);//从0到rootIdx-1
     string rightIn = inOrder.substr(rootIdx + 1);//从rootIdx+1到结尾
     //划分左右子树的后序序列
-    string leftPost = postOrder.substr(0, leftIn.size());//节点个数相等
+    string leftPost = postOrder.substr(0, leftIn.size());//节点个数相等，（起点的下标，子串的长度）
     string rightPost = postOrder.substr(leftIn.size(), postOrder.size() - 1-leftIn.size());
 
     //递归构建左右子树并挂载到根节点上
