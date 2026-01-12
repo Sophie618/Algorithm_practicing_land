@@ -11,7 +11,7 @@ void PrintIndent(BiTree T, int level){//凹入表示
     if (T == nullptr) return;
     PrintIndent(T->lchild, level + 1);
     cout << string(4 * (level - 1), ' ') << T->data << endl;
-    // 再打印左子树
+    // 再打印右子树
     PrintIndent(T->rchild, level + 1);
 }
 

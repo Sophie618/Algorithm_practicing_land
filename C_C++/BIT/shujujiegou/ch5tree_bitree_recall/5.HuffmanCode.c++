@@ -44,11 +44,11 @@ int calWPL(HuffmanTree root,int depth){
         return 0;//空节点就直接返回
     }
 
-    if(root->lchild==nullptr&&root->lchild==nullptr){
+    if(root->lchild==nullptr&&root->rchild==nullptr){
         return depth * root->weight;//确认是叶子节点就返回路径深度*权重
     }
     else{
-        return calWPL(root->lchild, depth + 1) + calWPL(root->rchild, depth + 1);//递归计算左右子树的WPL之和,这一行非常的精妙啊
+        return calWPL(root->lchild, depth + 1) + calWPL(root->rchild, depth + 1);//递归计算左右子树的WPL之和,这一行非常的精妙啊（其实换成1就是统计叶子节点的数量
     }
 }
 
